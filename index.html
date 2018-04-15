@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>PIANO KEYBOARD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+@media screen and (min-width: 1200px) { 
+	body {
+		width: 100%;
+		height: 100%;
+		background: url(bg.jpg) no-repeat;	
+	}
+	
+	#input-field {
+		left: 50%;
+		position: absolute;
+		top: 30%;
+		transform: translate(-50%, -50%);
+	}
+	
+	input {
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+
+	#wrapper {	
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#key-container {	
+		background: white;
+		opacity: 0.5;
+	}
+
+	.key-rows {
+		display: flex;
+	}
+
+	kbd {
+		flex: 1;
+		width: 20px;
+		padding: 15px 5px;
+		margin: 8px;
+		font-size: 1.5em;
+		box-shadow: 5px 5px 5px black;
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){ 
+	body {
+		width: 100%;
+		height: 100%;
+		background: url(bg.jpg) no-repeat;	
+	}
+	
+	#input-field {
+		left: 50%;
+		position: absolute;
+		top: 30%;
+		transform: translate(-50%, -50%);
+	}
+	
+	input {
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+
+	#wrapper {	
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#key-container {	
+		background: white;
+		opacity: 0.5;
+	}
+
+	.key-rows {
+		display: flex;
+	}
+
+	kbd {
+		flex: 1;
+		width: 20px;
+		padding: 15px 5px;
+		margin: 8px;
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){ 
+	body {
+		width: 100%;
+		height: 100%;
+		background: url(bg.jpg) no-repeat;	
+	}
+	
+	#input-field {
+		left: 50%;
+		position: absolute;
+		top: 30%;
+		transform: translate(-50%, -50%);
+	}
+	
+	input {
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+
+	#wrapper {	
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#key-container {	
+		background: white;
+		opacity: 0.5;
+	}
+
+	.key-rows {
+		display: flex;
+	}
+
+	kbd {
+		flex: 1;
+		width: 20px;
+		padding: 15px 5px;
+		margin: 8px;
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 767px){ 
+	body {
+		width: 100%;
+		height: 100%;
+		background: url(bg.jpg) no-repeat;	
+	}
+	
+	#input-field {
+		left: 50%;
+		position: absolute;
+		top: 30%;
+		transform: translate(-50%, -50%);
+	}
+	
+	input {
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+
+	#wrapper {	
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#key-container {	
+		background: white;
+		opacity: 0.5;
+	}
+
+	.key-rows {
+		display: flex;
+	}
+
+	kbd {
+		flex: 1;
+		width: 20px;
+		padding: 3px 3px;
+		margin: 5px;
+		font-size: 1.2em;
+	}
+}
+</style>
+
+</head>
+<body>
+
+<audio preload="auto" id="a"><source src="keys/A - 5.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="b"><source src="keys/A - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="c"><source src="keys/A - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="d"><source src="keys/Ab G - 5.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="e"><source src="keys/Ab G - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="f"><source src="keys/Ab G - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="g"><source src="keys/B - 5.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="h"><source src="keys/B - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="i"><source src="keys/B - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="j"><source src="keys/Bb A - 5.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="k"><source src="keys/Bb A - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="l"><source src="keys/Bb A - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="m"><source src="keys/C - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="n"><source src="keys/C - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="o"><source src="keys/C - 8.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="p"><source src="keys/D - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="q"><source src="keys/D - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="r"><source src="keys/Db C - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="s"><source src="keys/Db C - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="t"><source src="keys/E - 5.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="u"><source src="keys/E - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="v"><source src="keys/E - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="w"><source src="keys/Eb D - 5.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="x"><source src="keys/Eb D - 6.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="y"><source src="keys/Eb D - 7.mp3" type="audio/mpeg" id="note"></audio>
+<audio preload="auto" id="z"><source src="keys/F - 5.mp3" type="audio/mpeg" id="note"></audio>
+
+<div class="container" id="input-field">
+	<input type="text" placeholder="type something" class="text-center" autofocus></input>
+</div>
+
+<div id="wrapper" class="text-center">
+	<div id="key-container" class="container">
+		<div class="key-rows">
+			<kbd id="qKey">q</kbd>
+			<kbd>w</kbd>
+			<kbd>e</kbd>
+			<kbd>r</kbd>
+			<kbd>t</kbd>
+			<kbd>y</kbd>
+			<kbd>u</kbd>
+			<kbd>i</kbd>
+			<kbd>o</kbd>
+			<kbd>p</kbd>
+		</div>
+		<div class="key-rows">
+			<kbd>a</kbd>
+			<kbd>s</kbd>
+			<kbd>d</kbd>
+			<kbd>f</kbd>
+			<kbd>g</kbd>
+			<kbd>h</kbd>
+			<kbd>j</kbd>
+			<kbd>k</kbd>
+			<kbd>l</kbd>
+		</div>
+		<div class="key-rows">
+			<kbd>z</kbd>
+			<kbd>x</kbd>
+			<kbd>c</kbd>
+			<kbd>v</kbd>
+			<kbd>b</kbd>
+			<kbd>n</kbd>
+			<kbd>m</kbd>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+window.addEventListener("keypress", myFuncOne);
+
+function myFuncOne(event){
+
+	let x = event.key;
+	x = x.toLowerCase();
+	document.getElementById(x).play();
+	
+	let keys = document.getElementsByTagName("kbd");
+	for(let i=0; i<keys.length; i++){
+		if(keys[i].textContent == event.key){
+			keys[i].style.color = "red";
+			keys[i].style.transform = "translate(4px, 4px)";
+			keys[i].style.transform = "scale(0.9, 0.9)";
+			keys[i].style.border = ".5px solid white";
+			setTimeout(function(){
+				keys[i].style.color = "";
+				keys[i].style.transform = "";
+				keys[i].style.border = "";
+			},100);
+		}
+	}
+}
+</script>
